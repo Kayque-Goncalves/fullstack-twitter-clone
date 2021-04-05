@@ -1,10 +1,15 @@
 import React from 'react'
 
-function App () {
+import { Layout } from './components/Layout'
+import GlobalStyles from './styles/GlobalStyles'
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <h1> My app </h1>
-    </div>
+    <>
+      <Layout />
+
+      <GlobalStyles />
+    </>
   )
 }
 
