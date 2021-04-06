@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components'
 import { LocationOn } from '@styled-icons/material-outlined'
 import { Cake } from '@styled-icons/material'
 
+import Button from '../Button'
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -108,5 +110,20 @@ export const Followage = styled.div`
     & + span {
       margin-left: 20px;
     }   
+  }
+`
+
+export const EditButton = styled(Button)`
+  position: absolute;
+  top: 2vw;
+  right: 7px;
+
+  padding: 4px 16px;
+  font-size: 13px;
+
+  @media (min-width: 320px) {
+    top: 10px;
+    padding: 10px 19px;
+    font-size: 15px;
   }
 `
