@@ -1,13 +1,15 @@
 import React from 'react'
 
+import MenuBar from '../MenuBar'
 import Main from '../Main'
+
 import { Container, Wrapper } from './styles'
 
 export const Layout: React.FC = () => {
   return (
     <Container>
       <Wrapper>
-        {/* <MenuBar /> */}
+        <MenuBar />
         <Main />
         {/* <SideBar /> */}
       </Wrapper>
