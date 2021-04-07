@@ -14,6 +14,8 @@ export default styled.button<Props>`
 
   font-weight: bold;
   font-size: 15px;
+  text-align: center;
+  justify-content: center;
 
   cursor: pointer;
   outline: 0;
