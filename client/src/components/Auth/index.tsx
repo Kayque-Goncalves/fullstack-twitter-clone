@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { Conteiner, LeftConteiner, TwitterLogo, RightConteiner, Wrapper, Icon, Messages, Buttons, SignupButton, LoginButton } from './styles'
 
+import { AuthContext } from '../../Contexts/AuthContext'
+
 const Auth: React.FC = () => {
+  const { openModal } = useContext(AuthContext)
+
   return (
     <Conteiner>
-
       <LeftConteiner>
         <TwitterLogo />
       </LeftConteiner>
@@ -18,7 +21,7 @@ const Auth: React.FC = () => {
             <span> Join Twitter today. </span>
           </Messages>
           <Buttons>
-            <SignupButton>
+            <SignupButton onClick={ openModal }>
               <span> Sign up </span>
             </SignupButton>
             <LoginButton outlined>
