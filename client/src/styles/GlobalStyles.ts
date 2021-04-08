@@ -32,6 +32,7 @@ export default createGlobalStyle`
         --retweet: #00C06B;
         --like: #EB265E;
         --twitter: #33A1F2;
+        --modal: rgba(51, 161, 242, 0.15);
         --twitter-dark-hover: #011017;
         --twitter-light-hover: #2CBED6;
     }
