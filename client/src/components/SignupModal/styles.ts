@@ -72,12 +72,45 @@ export const NextButton = styled(Button)`
   position: absolute;
 `
 
+export const SubmitButton = styled(Button)`
+  width: 100%;
+  height: 50px;
+
+  margin-bottom: 180px;
+  padding: 0;
+
+  &:hover {
+    background: var(--twitter-light-hover);
+  }
+`
+
 export const Logo = styled(ScTwitter)`
   width: 50px;
   height: 50px;
 `
 
 export const Input = styled.input`
+    width: 100%;
+    height: 60px;
+    padding-top: 5px;
+    padding-left: 5px;
+    outline: 0;
+
+    background: rgba(0,0,0,0);
+
+    font-size: 1.2rem;
+
+    border-radius: 5px;
+    border: 1px solid var(--outline);
+
+    margin-bottom: 30px;
+
+    &:focus {
+      border: 2px solid var(--twitter);
+    }
+`
+
+export const PasswordInput = styled.input`
     width: 100%;
     height: 60px;
     padding-top: 5px;
