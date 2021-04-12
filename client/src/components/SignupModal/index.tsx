@@ -8,6 +8,7 @@ import { Container, ModalContent, Header, ArrowLeft, NextButton, Logo, Body, Inp
 import { signup } from '../../actions/auth'
 
 let type = 'password'
+const initialState = { name: '', loginOption: '', birth: '', month: '', day: '', year: '', password: '', confirmPassword: '' }
 
 const SignupModal: React.FC = () => {
   const { closeModal } = useContext(AuthContext)
@@ -17,17 +18,18 @@ const SignupModal: React.FC = () => {
 
   const [signStep, setSignStep] = useState(1)
   const [userSignOption, setUserSignOption] = useState(0)
-  const [formData, setFormData] = useState({ name: '', loginOption: '', month: '', day: '', year: '', password: '', confirmPassword: '' })
+  const [userData, setUserData] = useState(initialState)
   const [showPassword, setShowPassword] = useState(false)
 
   function handleChange (e: { target: { name: string; value: string } }) {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+    setUserData({ ...userData, [e.target.name]: e.target.value })
   }
 
   function handleSubmit (e: { preventDefault: () => void }) {
     e.preventDefault()
+    userData.birth = `${userData.month}, ${userData.day}, ${userData.year}`
 
-    dispatch(signup(formData, history))
+    dispatch(signup(userData, history))
   }
 
   function nextStep () {
@@ -58,7 +60,7 @@ const SignupModal: React.FC = () => {
           <Header>
             { signStep === 1 ? <ArrowLeft onClick={ closeModal }/> : <ArrowLeft onClick={ prevStep }/> }
             <Logo />
-            { signStep === 1 && (formData.name.length > 0 && formData.month.length > 0 && formData.day.length > 0 && formData.year.length > 0) && <NextButton onClick={ nextStep }>Next</NextButton> }
+            { signStep === 1 && (userData.name.length > 0 && userData.month.length > 0 && userData.day.length > 0 && userData.year.length > 0) && <NextButton onClick={ nextStep }>Next</NextButton> }
           </Header>
 
           <Body>
@@ -66,8 +68,8 @@ const SignupModal: React.FC = () => {
               { signStep === 1 ? (
                 <>
                   <h1>Create your account</h1>
-                  <Input name="name" placeholder="Name" required onChange={ handleChange } value={ formData?.name } />
-                  { userSignOption === 0 ? <Input name="loginOption" placeholder="Phone" onChange={ handleChange } value={ formData?.loginOption } /> : <Input name="loginOption" placeholder="Email" required onChange={ handleChange } value={ formData?.loginOption } /> }
+                  <Input name="name" placeholder="Name" required onChange={ handleChange } value={ userData?.name } />
+                  { userSignOption === 0 ? <Input name="loginOption" placeholder="Phone" onChange={ handleChange } value={ userData?.loginOption } /> : <Input name="loginOption" placeholder="Email" required onChange={ handleChange } value={ userData?.loginOption } /> }
                   <span onClick={ changeUserSignOption }>Use { userSignOption === 0 ? 'Email' : 'Phone' } instead</span>
 
                   <h2>Date of birth</h2>
@@ -79,7 +81,7 @@ const SignupModal: React.FC = () => {
                   <Footer>
                     <div>
                       <span>Month</span>
-                      <select name="month" required onChange={ handleChange } value={ formData?.month }>
+                      <select name="month" required onChange={ handleChange } value={ userData?.month }>
                         <option></option>
                         <option>October</option>
                       </select>
@@ -87,7 +89,7 @@ const SignupModal: React.FC = () => {
 
                     <div>
                       <span>Day</span>
-                      <select name="day" required onChange={ handleChange } value={ formData?.day }>
+                      <select name="day" required onChange={ handleChange } value={ userData?.day }>
                         <option></option>
                         <option>31</option>
                       </select>
@@ -95,7 +97,7 @@ const SignupModal: React.FC = () => {
 
                     <div>
                       <span>Year</span>
-                      <select name="year" required onChange={ handleChange } value={ formData?.year }>
+                      <select name="year" required onChange={ handleChange } value={ userData?.year }>
                         <option></option>
                         <option>2002</option>
                       </select>
@@ -105,11 +107,11 @@ const SignupModal: React.FC = () => {
               ) : (
                 <>
                   <h1>You will need a password</h1>
-                  <PasswordInput type={ type } name="password" placeholder="Password" required onChange={ handleChange } value={ formData?.password } />
+                  <PasswordInput type={ type } name="password" placeholder="Password" required onChange={ handleChange } value={ userData?.password } />
                   <PasswordInput type={ type } name="confirmPassword" placeholder="Confirm Password" required onChange={ handleChange } />
                   <span onClick={ handleShowPassword }>{ type === 'password' ? 'Reveal' : 'Hide' } password</span>
 
-                  { formData.password.length > 0 && <SubmitButton onClick={handleSubmit}>Create my account</SubmitButton>}
+                  { userData.password.length > 0 && <SubmitButton onClick={handleSubmit}>Create my account</SubmitButton>}
                 </>
               )}
 
