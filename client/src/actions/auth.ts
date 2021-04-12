@@ -1,8 +1,8 @@
 import * as api from '../api/index'
 
-export const signup = (formData: any, history: any) => async (dispatch: any) => {
+export const signup = (userData: any, history: any) => async (dispatch: any) => {
   try {
-    const { data } = await api.signUp(formData)
+    const { data } = await api.signUp(userData)
 
     dispatch({ type: 'AUTH', data })
 
