@@ -1,6 +1,6 @@
 import { ScTwitter } from '@styled-icons/evil'
 import styled, { css } from 'styled-components'
-import Button from '../Button'
+import Button from '../Globals/Button'
 
 export const Conteiner = styled.div`
   display: flex;

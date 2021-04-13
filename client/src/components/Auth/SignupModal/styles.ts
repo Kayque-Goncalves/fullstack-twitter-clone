@@ -1,7 +1,7 @@
 import { ScTwitter } from '@styled-icons/evil'
 import { ArrowBack } from '@styled-icons/material-outlined'
 import styled from 'styled-components'
-import Button from '../Button'
+import Button from '../../Globals/Button'
 
 export const Container = styled.div`
   position: fixed;

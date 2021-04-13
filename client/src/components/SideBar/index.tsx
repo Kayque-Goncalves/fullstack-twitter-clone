@@ -2,8 +2,8 @@
 import React from 'react'
 import StickyBox from 'react-sticky-box'
 
-import List from '../List'
-import FollowSugestion from '../FollowSugestion'
+import List from './List'
+import FollowSugestion from './List/FollowSugestion'
 
 import { Container, SearchWrapper, SearchInput, SearchIcon, Body } from './styles'
 

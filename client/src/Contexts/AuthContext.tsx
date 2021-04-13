@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from 'react'
-import SignupModal from '../components/SignupModal'
+import SignupModal from '../components/Auth/SignupModal'
 
 interface AuthContextData {
   openModal: () => void

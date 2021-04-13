@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { LocationOn } from '@styled-icons/material-outlined'
 import { Cake } from '@styled-icons/material'
 
-import Button from '../Button'
+import Button from '../../Globals/Button'
 
 export const Container = styled.div`
   display: flex;

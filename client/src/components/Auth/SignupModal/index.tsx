@@ -3,9 +3,9 @@ import React, { useContext, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
-import { AuthContext } from '../../Contexts/AuthContext'
+import { AuthContext } from '../../../Contexts/AuthContext'
 import { Container, ModalContent, Header, ArrowLeft, NextButton, Logo, Body, Input, PasswordInput, SubmitButton, Footer } from './styles'
-import { signup } from '../../actions/auth'
+import { signup } from '../../../actions/auth'
 
 let type = 'password'
 const initialState = { name: '', loginOption: '', birth: '', month: '', day: '', year: '', password: '', confirmPassword: '' }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Button from '../Button'
+import Button from '../Globals/Button'
 import { Container, Topside, Logo, MenuButton, HomeIcon, BellIcon, EmailIcon, FavoriteIcon, ProfileIcon, Botside, Avatar, ProfileData, ExitIcon } from './styles'
 
 const MenuBar: React.FC = () => {
