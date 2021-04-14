@@ -30,6 +30,8 @@ const SignupModal: React.FC = () => {
     userData.birth = `${userData.month}, ${userData.day}, ${userData.year}`
 
     dispatch(signup(userData, history))
+
+    closeModal()
   }
 
   function nextStep () {
@@ -111,7 +113,7 @@ const SignupModal: React.FC = () => {
                   <PasswordInput type={ type } name="confirmPassword" placeholder="Confirm Password" required onChange={ handleChange } />
                   <span onClick={ handleShowPassword }>{ type === 'password' ? 'Reveal' : 'Hide' } password</span>
 
-                  { userData.password.length > 0 && <SubmitButton onClick={handleSubmit}>Create my account</SubmitButton>}
+                  { userData.password.length > 0 && <SubmitButton onClick={ handleSubmit }>Create my account</SubmitButton>}
                 </>
               )}
 
