@@ -94,7 +94,7 @@ export const Messages = styled.div`
 export const Buttons = styled.div`
   display: flex;
   flex-direction: column;
-
+  
   @media (max-width: 1000px) {
     flex-direction: row;
   }
@@ -113,7 +113,7 @@ export const SignupButton = styled(Button)`
 `
 
 export const LoginButton = styled(Button)`
-  max-width: 400px;
+  width: 400px;
   height: 45px;
   padding: 0;
 
