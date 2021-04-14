@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Conteiner, LeftConteiner, TwitterLogo, RightConteiner, Wrapper, Icon, Messages, Buttons, SignupButton, LoginButton } from './styles'
 
@@ -24,9 +25,11 @@ const Auth: React.FC = () => {
             <SignupButton onClick={ openModal }>
               <span> Sign up </span>
             </SignupButton>
-            <LoginButton outlined>
-              <span> Log in </span>
-            </LoginButton>
+            <Link to="/login">
+              <LoginButton outlined>
+                <span> Log in </span>
+              </LoginButton>
+            </Link>
           </Buttons>
         </Wrapper>
 
