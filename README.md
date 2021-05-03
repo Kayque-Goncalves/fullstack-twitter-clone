@@ -2,7 +2,7 @@
   React Twitter clone
 </h1>
 
-That is a project made to train my knowledge and learn more about advanced React and Node, so... feel free to give me any feedback.
+This is a project made to train my knowledge and learn more about advanced React and Node, so... feel free to give me any feedback.
 
 🚧 **Twitter Clone is under development** 🚧
 
