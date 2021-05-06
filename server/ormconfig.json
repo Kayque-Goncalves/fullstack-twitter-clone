@@ -1,0 +1,20 @@
+{
+   "type": "mysql",
+   "host": "localhost",
+   "port": "3306",
+   "username": "root",
+   "password": "MySQL892240!",
+   "database": "twitter",
+   "synchronize": true,
+   "logging": false,
+   "migrations": ["./src/database/migrations/**.ts"],
+   "entities": ["./src/entities/**.ts"],
+   "subscribers": [
+      "src/subscriber/**/*.ts"
+   ],
+   "cli": {
+      "entitiesDir": "./src/entities",
+      "migrationsDir": "./src/database/migrations",
+      "subscribersDir": "src/subscriber"
+   }
+}
